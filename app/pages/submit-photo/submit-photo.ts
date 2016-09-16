@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-/*
-  Generated class for the SubmitPhotoPage page.
+import { Camera } from 'ionic-native';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/submit-photo/submit-photo.html',
 })
@@ -14,6 +10,27 @@ export class SubmitPhotoPage {
 
   constructor(private navCtrl: NavController) {
 
+  }
+
+  takePhoto() {
+    Camera.getPicture({
+      destinationType: Camera.DestinationType.DATA_URL,
+    }).then((imageData) => {
+      alert('Image added successfully!');
+    }, (err) => {
+      alert('Error adding image. Good luck figuring out why!');
+    });
+  }
+
+  useExistingPhoto() {
+    Camera.getPicture({
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: Camera.DestinationType.DATA_URL
+    }).then((imageData) => {
+      alert('Image added successfully!');
+    }, (err) => {
+      alert('Error adding image. Good luck figuring out why!');
+    });
   }
 
 }

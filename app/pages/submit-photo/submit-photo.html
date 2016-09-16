@@ -1,3 +1,11 @@
 <ion-content padding class="submit-photo-page">
   <img src="build/images/royal-rewards-app-header.png" alt="" class="app-header">
+  <button (click)="takePhoto()" secondary block>
+    <ion-icon name="camera"></ion-icon>
+    Take a Photo
+  </button>
+  <button (click)="useExistingPhoto()" secondary block>
+    <ion-icon name="images"></ion-icon>
+    Select From Gallery
+  </button>
 </ion-content>
