@@ -1,15 +1,19 @@
 ion-navbar {
 
+    ion-title {
+        text-align: center;
+    }
+
     .toolbar-background {
         background: color($colors, primary);
     }
 
-    .toolbar-content {
+    .toolbar-title {
         color: color($colors, secondary);
     }
 
-    ion-title {
-        text-align: center;
+    .toolbar-content {
+        color: color($colors, secondary);
     }
 }
 

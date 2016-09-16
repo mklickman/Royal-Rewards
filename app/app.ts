@@ -22,4 +22,7 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, null, {
+  activator: 'highlight',
+  iconMode: 'md'
+});
