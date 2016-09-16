@@ -1,0 +1,40 @@
+ion-navbar {
+
+    .toolbar-background {
+        background: color($colors, primary);
+    }
+
+    .toolbar-content {
+        color: color($colors, secondary);
+    }
+
+    ion-title {
+        text-align: center;
+    }
+}
+
+.app-header {
+    margin: 0 0 3em;
+}
+
+ion-modal {
+    top: 2em;
+    bottom: 2em;
+    left: 1em;
+    right: 1em;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+
+    ion-header {
+        .toolbar-background {
+            background: color($colors, secondary);
+        }
+
+        .toolbar-title {
+            color: white;
+        }
+    }
+}
