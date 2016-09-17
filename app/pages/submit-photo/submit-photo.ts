@@ -3,12 +3,19 @@ import { NavController } from 'ionic-angular';
 
 import { Camera } from 'ionic-native';
 
+import {Photo} from '../../common/photo';
+import {PhotoService} from '../../common/photo.service';
+
 @Component({
   templateUrl: 'build/pages/submit-photo/submit-photo.html',
+  providers: [PhotoService]
 })
 export class SubmitPhotoPage {
 
-  constructor(private navCtrl: NavController) {
+  constructor(
+    private navCtrl: NavController,
+    private photoService: PhotoService
+  ) {
 
   }
 
@@ -16,6 +23,7 @@ export class SubmitPhotoPage {
     Camera.getPicture({
       destinationType: Camera.DestinationType.DATA_URL,
     }).then((imageData) => {
+      this.photoService.addPhoto(imageData);
       alert('Image added successfully!');
     }, (err) => {
       alert('Error adding image. Good luck figuring out why!');
@@ -27,6 +35,7 @@ export class SubmitPhotoPage {
       sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
       destinationType: Camera.DestinationType.DATA_URL
     }).then((imageData) => {
+      this.photoService.addPhoto(imageData);
       alert('Image added successfully!');
     }, (err) => {
       alert('Error adding image. Good luck figuring out why!');

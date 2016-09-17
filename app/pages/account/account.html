@@ -15,7 +15,7 @@
 
 <ion-content>
   <ion-list>
-      <ion-item *ngFor="let photo of photos">
+      <ion-item *ngFor="let photo of photos; let i = index" (click)="viewFullsize(i)">
         <ion-thumbnail item-left>
           <img [src]="photo.data">
         </ion-thumbnail>
